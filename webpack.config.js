@@ -1,9 +1,17 @@
 var webpack = require('webpack'),
     path = require('path');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 function root(args) {
   args = Array.prototype.slice.call(arguments, 0);
   return path.join.apply(path, [__dirname].concat(args));
+}
+
+function getArticles(){
+  return new HtmlWebpackPlugin({  // Also generate a test.html 
+      filename: 'test.html',
+      template: 'src/assets/test.html'
+    });
 }
 
 module.exports = {
@@ -15,7 +23,8 @@ module.exports = {
   },
   output: {
     path: './build',
-    filename: 'bundle.js'
+    filename: 'bundle.js',
+    publicPath: "/",
   },
   module: {
     preLoaders: [
@@ -25,6 +34,12 @@ module.exports = {
       { test: /\.ts$/, loader: 'awesome-typescript-loader', exclude: [ /\.(spec|e2e)\.ts$/ ] }
     ]
   },
+  plugins: [
+    new HtmlWebpackPlugin({  // Also generate a test.html 
+      filename: 'index.html',
+      template: 'blog/index.html'
+    })
+  ],
   devServer: {
     historyApiFallback: true
   }

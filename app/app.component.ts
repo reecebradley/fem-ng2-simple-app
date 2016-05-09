@@ -5,6 +5,7 @@ import {ExperimentsComponent} from './experiments/experiments.component';
 import {HomeComponent} from './home/home.component';
 import {StateService} from './common/state.service';
 import {ExperimentsService} from './common/experiments.service';
+import {BlogComponent} from './blog/blog.component';
 
 @Component({
   selector: 'app',
@@ -16,6 +17,7 @@ import {ExperimentsService} from './common/experiments.service';
 @RouteConfig([
   {path: '/home',        name: 'Home',        component: HomeComponent, useAsDefault: true },
   {path: '/about',       name: 'About',       component: AboutComponent },
-  {path: '/experiments', name: 'Experiments', component: ExperimentsComponent }
+  {path: '/experiments', name: 'Experiments', component: ExperimentsComponent },
+  {path: '/blog/...',    name: 'Blog',        component: BlogComponent }
 ])
 export class AppComponent {}

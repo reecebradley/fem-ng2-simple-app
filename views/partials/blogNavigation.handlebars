@@ -1,0 +1,16 @@
+<nav id="docs-navbar" class="docs-nav updates-nav visible-md visible-lg">
+	<h4>Blog posts</h4>
+	<ul class="nav">
+		
+			<li {{#ifCond section "2016/04/22/first_post"}}class="active"{{/ifCond}}><a href="/blog/2016/04/22/first_post">The Beginning</a></li>
+		
+	</ul>
+</nav>
+<nav id="small-nav" class="docs-nav updates-nav hidden-md hidden-lg">
+	<h4>Blogs</h4>
+	<select id="small-nav-dropdown">
+		
+			<option value="/blog/2016/04/22/first_post" {{#ifCond section "2016/04/22/first_post"}}"selected"{{/ifCond}}>The Beginning</option>
+		
+	</select>
+</nav>
